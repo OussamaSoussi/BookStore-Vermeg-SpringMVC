@@ -1,0 +1,11 @@
+1607621810222	Rename type variable 'T'
+1607621818893	Rename type variable 'S'
+1607623217798	Rename field 'productService'
+1607623369954	Rename package 'com.vermeg.polyteh.Service'
+1607623387235	Rename package 'org.vermeg.polytech.controllers'
+1607623897009	Rename resource 'applicationcontextxml.xml'
+1607623912359	Rename resource 'applicationxml'
+1607625583108	Delete element
+1607625639192	Delete element
+1607625660143	Delete element
+1607626352330	Rename field 'bookService'

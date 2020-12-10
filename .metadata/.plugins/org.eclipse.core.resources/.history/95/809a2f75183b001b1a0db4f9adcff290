@@ -1,0 +1,5 @@
+package com.vermeg.polytech.Service;
+
+public class UserService implements IService<T> {
+
+}

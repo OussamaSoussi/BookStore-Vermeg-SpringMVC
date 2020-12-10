@@ -1,0 +1,37 @@
+package com.vermeg.polytech.DAO;
+
+import java.util.List;
+
+public class ServiceDAO implements IDAO<> {
+
+	@Override
+	public O findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<O> find() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(O object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(O object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(O object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

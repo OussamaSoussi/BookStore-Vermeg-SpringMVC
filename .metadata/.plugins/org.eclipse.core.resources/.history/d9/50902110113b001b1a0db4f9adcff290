@@ -1,0 +1,49 @@
+package com.vermeg.polyteh.Service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.vermeg.polytech.DAO.IDAO;
+import com.vermeg.polytech.model.Book;
+
+public class BookService implements IService<Book> {
+
+	@Autowired
+	private IDAO<Book> bookDAO;
+	public BookService() {}
+	public BookService(IDAO<Book> bookDAO) {
+		this.bookDAO = bookDAO;
+	}
+
+	@Transactional
+	public List<Book> find() {
+		return this.bookDAO.find();
+	}
+
+	@Override
+	public Book findById(int id) {
+		return this.bookDAO.findById(id);
+	}
+
+	@Override
+	public void add(Book book) {
+		this.bookDAO.add(book);
+		
+	}
+
+	@Override
+	public void update(Book book) {
+		this.bookDAO.update(book);
+		
+	}
+
+	@Override
+	public void delete(Book book) {
+		this.bookDAO.delete(book);
+		
+	}
+
+}
