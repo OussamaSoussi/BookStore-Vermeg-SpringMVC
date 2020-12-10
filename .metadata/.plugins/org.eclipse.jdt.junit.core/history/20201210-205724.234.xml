@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserServiceTest" project="BookStoreMVC" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.vermeg.polytech.Service.UserServiceTest" time="0.304">
+    <testcase name="shouldDeleteUserSuccessfully" classname="com.vermeg.polytech.Service.UserServiceTest" time="0.299"/>
+    <testcase name="shouldUpdateUserSuccessfully" classname="com.vermeg.polytech.Service.UserServiceTest" time="0.001"/>
+    <testcase name="shouldAddUserSuccessfully" classname="com.vermeg.polytech.Service.UserServiceTest" time="0.0"/>
+    <testcase name="shouldReturnUserList" classname="com.vermeg.polytech.Service.UserServiceTest" time="0.004"/>
+  </testsuite>
+</testrun>

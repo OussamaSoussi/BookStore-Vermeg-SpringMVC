@@ -1,0 +1,56 @@
+package com.vermeg.polytech.controllers;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.doNothing;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import com.vermeg.polytech.Service.IService;
+import com.vermeg.polytech.model.Book;
+import com.vermeg.polytech.model.User;
+
+public class UserControllerTest {
+	
+	@Autowired
+	private MockMvc mockMvc;
+	@Mock
+	private IService<Book> mockedBookService;
+	@InjectMocks
+	private BookController bookController;
+	
+	@Before
+	public void setup() {
+		MockitoAnnotations.initMocks(this);
+		this.mockMvc = MockMvcBuilders.standaloneSetup(bookController).build();
+	}
+
+	@Test
+	public void testFind() throws Exception {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAdd() throws Exception {
+		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",23703187);
+		doNothing().when(this.mockedBookService).add(any(User.class));
+	}
+
+	@Test
+	public void testUpdate() throws Exception {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDelete() throws Exception{
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookControllerTest" project="BookStoreMVC" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.vermeg.polytech.controllers.BookControllerTest" time="1.704">
+    <testcase name="testGetAllBooks" classname="com.vermeg.polytech.controllers.BookControllerTest" time="1.606"/>
+    <testcase name="testGetBook" classname="com.vermeg.polytech.controllers.BookControllerTest" time="0.098"/>
+  </testsuite>
+</testrun>

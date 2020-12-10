@@ -29,17 +29,17 @@ public class UserController {
 		return this.userService.find();
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/book/add")
+	@RequestMapping(method = RequestMethod.POST, value = "/add")
 	public void add(@RequestBody User user) {
 		this.userService.add(user);
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT, value = "/book/update")
+	@RequestMapping(method = RequestMethod.PUT, value = "/update")
 	public void update(@RequestBody User user) {
 		this.userService.update(user);
 	}
 	
-	@RequestMapping(method = RequestMethod.DELETE, value = "/book/delete")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/delete")
 	public void delete(@RequestBody User user) {
 		this.userService.delete(user);
 	}

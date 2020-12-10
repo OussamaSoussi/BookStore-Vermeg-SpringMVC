@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookServiceTest" project="BookStoreMVC" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.vermeg.polytech.Service.BookServiceTest" time="0.303">
+    <testcase name="testAdd" classname="com.vermeg.polytech.Service.BookServiceTest" time="0.297"/>
+    <testcase name="testFind" classname="com.vermeg.polytech.Service.BookServiceTest" time="0.005"/>
+    <testcase name="testFindById" classname="com.vermeg.polytech.Service.BookServiceTest" time="0.001"/>
+  </testsuite>
+</testrun>
