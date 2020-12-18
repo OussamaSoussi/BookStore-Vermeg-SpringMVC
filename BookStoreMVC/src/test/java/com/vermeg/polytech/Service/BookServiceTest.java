@@ -37,9 +37,9 @@ public class BookServiceTest {
 	@Test
 	public void testFind() {
 		List<Book> books = new ArrayList<Book>();
-		books.add(new Book(1,"title1","author1","info1",50d,null));
-		books.add(new Book(2,"title2","author2","info2",10d,null));
-		books.add(new Book(3,"title3","author3","info3",20d,null));
+		books.add(new Book(1,"title1","author1",50d,null));
+		books.add(new Book(2,"title2","author2",10d,null));
+		books.add(new Book(3,"title3","author3",20d,null));
 		when(this.mockedBookDAO.find()).thenReturn(books);
 		assertTrue("Test failed: Size of list isn't equal to the size of the present test",
 				this.bookService.find().size() == books.size());
@@ -47,7 +47,7 @@ public class BookServiceTest {
 
 	@Test
 	public void testFindById() {
-		Book book = new Book(4,"title4","author4","info4",100d,null);
+		Book book = new Book(4,"title4","author4",100d,null);
 		int id = book.getId();
 		when(mockedBookDAO.findById(id)).thenReturn(book);
 		assertEquals(4,book.getId());
@@ -56,14 +56,14 @@ public class BookServiceTest {
 
 	@Test
 	public void shouldAddBookSuccessfully() {
-		Book book = new Book(4,"title4","author4","info4",100d,null);
+		Book book = new Book(4,"title4","author4",100d,null);
 		bookService.add(book);
         verify(mockedBookDAO, times(1)).add(book);
 		}
 	
 	@Test
 	public void shouldUpdateBookSuccessfully() {
-		Book book = new Book(4,"title4","author4","info4",100d,null);
+		Book book = new Book(4,"title4","author4",100d,null);
 		bookService.update(book);
         verify(mockedBookDAO, times(1)).update(book);
 		}
@@ -71,7 +71,7 @@ public class BookServiceTest {
 
 	@Test
 	public void shouldDeleteBookSuccessfully() {
-		Book book = new Book(4,"title4","author4","info4",100d,null);
+		Book book = new Book(4,"title4","author4",100d,null);
 		bookService.delete(book);
         verify(mockedBookDAO, times(1)).delete(book);
 		}

@@ -1,0 +1,44 @@
+package com.vermeg.polytech.Service;
+
+import java.util.List;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.vermeg.polytech.DAO.IDAO;
+import com.vermeg.polytech.model.Order;
+
+@Service
+public class OrderService implements IService<Order>{
+	@Autowired
+	private IDAO<Order> orderDAO;
+	
+	@Transactional
+	public List<Order> find() {
+		return this.orderDAO.find();
+	}
+	
+	@Transactional
+	public Order findById(int id) {
+		return this.orderDAO.findById(id);
+	}
+	
+	@Transactional
+	public void add(Order order) {
+		this.orderDAO.add(order);
+	}
+	
+	@Transactional
+	public void update(Order order) {
+		this.orderDAO.update(order);
+	}
+	
+	@Transactional
+	public void delete(Order order) {
+		this.orderDAO.delete(order);
+	}
+	
+}
+

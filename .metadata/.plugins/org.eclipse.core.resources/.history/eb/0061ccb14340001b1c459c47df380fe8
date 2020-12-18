@@ -1,0 +1,5 @@
+package com.vermeg.polytech.security;
+
+public class SpringSecurityConfig {
+
+}

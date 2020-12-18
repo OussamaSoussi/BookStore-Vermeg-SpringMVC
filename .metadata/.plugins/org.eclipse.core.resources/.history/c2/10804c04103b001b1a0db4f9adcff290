@@ -1,5 +1,0 @@
-package com.vermeg.polyteh.Service;
-
-public interface IService {
-
-}

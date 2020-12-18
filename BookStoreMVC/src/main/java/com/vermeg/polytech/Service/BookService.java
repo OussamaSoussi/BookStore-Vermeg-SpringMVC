@@ -50,6 +50,11 @@ public class BookService implements IService<Book> {
 		
 	}
 	
+	@Transactional 
+	public double calculate(double price, int qte) {
+		return price*qte;
+	}
+	
 	@Transactional
 	public double getTotalPriceOfOrder(int id) {
 		double sum = 0;
@@ -57,5 +62,6 @@ public class BookService implements IService<Book> {
 			sum += orderLine.getBook().getPrice() * orderLine.getQuantity();
 		return sum;
 	}
+	
 
 }

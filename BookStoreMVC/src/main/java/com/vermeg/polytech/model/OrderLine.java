@@ -3,16 +3,16 @@ package com.vermeg.polytech.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "oderLine")
+@Table(name = "orderLine")
 public class OrderLine {
 	
 	@ManyToOne (fetch = FetchType.LAZY)
 	@JoinColumn(name = "book_id")
 	private Book book;
-
-	@ManyToOne (fetch = FetchType.LAZY)
-	@JoinColumn(name = "user_id")
-	private User user;
+	
+	@ManyToOne
+	@JoinColumn(name="order_id")
+	private Order order;
 
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +30,6 @@ public class OrderLine {
 
 		public OrderLine(Book book, User user) {
 			this.book = book;
-			this.user = user;
 		}
 
 		public Book getBook() {
@@ -41,13 +40,6 @@ public class OrderLine {
 			this.book = book;
 		}
 
-		public User getUser() {
-			return user;
-		}
-
-		public void setUser(User user) {
-			this.user = user;
-		}
 
 		public int getId() {
 			return id;
@@ -67,7 +59,7 @@ public class OrderLine {
 
 		@Override
 		public String toString() {
-			return "OrderLine [book=" + book + ", user=" + user + ", id=" + id + ", quantity=" + quantity + "]";
+			return "OrderLine [book=" + book + ", id=" + id + ", quantity=" + quantity + "]";
 		}
 		
 		

@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>title</th>
+            <th>Author</th>
+            <th>Release Date</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books">
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.authorName}}</td>
+            <td>{{book.releaseDate | date}}</td>
+            <td>{{book.price}}</td>
+            <td>
+                <input type="number" #quantity value="1" min="1" max="5">&nbsp;
+            </td>
+                <td><button (click)="bookDetails(book.id)" class="btn btn-info" style="margin-left: 10px">Details</button></td>
+                <td><a (click)="addToCart(book.id,quantity.value)" class="btn btn-success">Add To Cart</a>
+            </td>
+        
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

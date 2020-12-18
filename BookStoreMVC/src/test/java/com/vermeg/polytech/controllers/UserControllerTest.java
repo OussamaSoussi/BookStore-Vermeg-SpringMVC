@@ -28,7 +28,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.vermeg.polytech.Service.IService;
 import com.vermeg.polytech.model.User;
 import com.vermeg.polytech.utils.Mapper;
-
+import com.vermeg.polytech.model.Role;
 public class UserControllerTest {
 	
 	@Autowired
@@ -47,8 +47,8 @@ public class UserControllerTest {
 	@Test
 	public void testFind() throws Exception {
 		List <User> users = new ArrayList<User>();
-		users.add(new User(1,"oussema","osoussi@vermeg.com","azert12",23703187));
-		users.add(new User(1,"soussi","osousssi@vermeg.com","azert123",22268193));
+		users.add(new User(1,"oussema","osoussi@vermeg.com","azert12",Role.Admin));
+		users.add(new User(1,"soussi","osousssi@vermeg.com","azert123",Role.User));
 		when(mockedUserService.find()).thenReturn(users);
 		this.mockMvc.perform(get("/user/all"))
 //		.andExpect(MockMvcResultMatchers.jsonPath("$.id", Matchers.is(1)))
@@ -58,7 +58,7 @@ public class UserControllerTest {
 
 	@Test
 	public void testAdd() throws Exception {
-		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",23703187);
+		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",Role.Admin);
 		doNothing().when(this.mockedUserService).add(any(User.class));
 		this.mockMvc.perform(post("/user/add")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -69,7 +69,7 @@ public class UserControllerTest {
 
 	@Test
 	public void testUpdate() throws Exception {
-		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",23703187);
+		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",Role.Admin);
 		doNothing().when(this.mockedUserService).update(any(User.class));
 		this.mockMvc.perform(put("/user/update")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -80,7 +80,7 @@ public class UserControllerTest {
 
 	@Test
 	public void testDelete() throws Exception{
-		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",23703187);
+		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",Role.Admin);
 		doNothing().when(this.mockedUserService).add(any(User.class));
 		this.mockMvc.perform(delete("/user/delete")
 				.contentType(MediaType.APPLICATION_JSON)

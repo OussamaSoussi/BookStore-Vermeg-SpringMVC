@@ -56,9 +56,9 @@ public class BookControllerTest {
 		@Test
 		public void testGetAllBooks() throws Exception {
 			List <Book> books = new ArrayList<Book>();
-			books.add(new Book(1,"title1","author1","info1",50d,null));
-			books.add(new Book(2,"title2","author2","info2",10d,null));
-			books.add(new Book(3,"title3","author3","info3",20d,null));
+			books.add(new Book(1,"title1","author1",50d,null));
+			books.add(new Book(2,"title2","author2",10d,null));
+			books.add(new Book(3,"title3","author3",20d,null));
 			
 			when(MockedBookService.find()).thenReturn(books);
 
@@ -71,7 +71,7 @@ public class BookControllerTest {
 
 		@Test
 		public void testGetBook() throws Exception {
-			Book book = new Book(4,"title4","author4","info4",100d,null);
+			Book book = new Book(4,"title4","author4",100d,null);
 			when(MockedBookService.findById(1)).thenReturn(book);
 //			verify(MockedBookservice).getBookByISBN(1);
 			this.mockMvc.perform(get("/book/get/{id}", 1))

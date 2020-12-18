@@ -1,0 +1,22 @@
+<h2>Book Details</h2> 
+
+<hr/>
+<div *ngIf="book">
+  <div>
+    <label><b>Title: </b></label> {{book.title}}
+  </div>
+  <div>
+    <label><b>Author: </b></label> {{book.authorName}}
+  </div>
+  <div>
+    <label><b>Release Date: </b></label> {{book.releaseDate | date}}
+  </div> 
+  <div>
+    <label><b>Price (dt): </b></label> {{book.price}}
+  </div>     
+</div>
+
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to book List</button><br>

@@ -1,0 +1,45 @@
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Release Date</td>
+                <td>Author Name</td>
+                <td>Unit Price</td>
+                <td>Quantity</td>
+                <td colspan="1">Actions</td>
+            </tr>
+        </thead>
+      
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.releaseDate | date }}</td>
+                <td>{{ book.authorName }}</td>
+                <td>{{ book.price }} DT</td>
+                <td>
+                    <input type="number" value="{{ quantities[books.indexOf(book)] }}" min="1" max="5" #qte (change)="updateQte(book.id,qte.value)">&nbsp;
+                </td>
+                <td><a (click)="delete(book.id)" class="btn btn-danger">Remove</a></td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>Total: </b></td>
+                <td>{{ total }} DT</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+
+
+<button (click)="purchase()"  class="btn btn-success">Purchase</button>

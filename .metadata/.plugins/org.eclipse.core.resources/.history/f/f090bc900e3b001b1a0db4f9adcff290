@@ -1,5 +1,0 @@
-package com.vermeg.polytech.DAO;
-
-public class BookDAO implements IDAO {
-
-}

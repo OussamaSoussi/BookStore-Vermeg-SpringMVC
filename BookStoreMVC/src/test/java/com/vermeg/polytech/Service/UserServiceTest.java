@@ -16,6 +16,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.vermeg.polytech.DAO.IDAO;
+import com.vermeg.polytech.model.Role;
 import com.vermeg.polytech.model.User;
 
 public class UserServiceTest {
@@ -33,8 +34,8 @@ public class UserServiceTest {
 	@Test
 	public void shouldReturnUserList() {
 		ArrayList<User> userList = new ArrayList<User>();
-		userList.add(new User(1,"oussema","osoussi@vermeg.com","azert12",23703187));
-		userList.add(new User(2,"soussi","osousssi@vermeg.com","azert123",22268193));
+		userList.add(new User(1,"oussema","osoussi@vermeg.com","azert12",Role.Admin));
+		userList.add(new User(2,"soussi","osousssi@vermeg.com","azert123",Role.User));
 		when(userDAO.find()).thenReturn(userList);
 		assertTrue("Test failed: Array size is wrong", this.userService.find().size() == userList.size());
 		assertTrue("Test failed: First element is not equal to the first element the mocked list",
@@ -44,21 +45,21 @@ public class UserServiceTest {
 	
 	@Test
 	public void shouldAddUserSuccessfully() {
-		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",23703187);
+		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",Role.Admin);
 		userService.add(user);
         verify(userDAO, times(1)).add(user);
 		}
 	
 	@Test
 	public void shouldUpdateUserSuccessfully() {
-		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",23703187);
+		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",Role.Admin);
 		userService.update(user);
         verify(userDAO, times(1)).update(user);
 	}
 	
 	@Test
 	public void shouldDeleteUserSuccessfully() {
-		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",23703187);
+		User user = new User(1,"oussema","osoussi@vermeg.com","azert12",Role.Admin);
 		userService.delete(user);
         verify(userDAO, times(1)).delete(user);
 	}

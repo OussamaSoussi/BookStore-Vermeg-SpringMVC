@@ -31,6 +31,7 @@
 				<beans:value>com.vermeg.polytech.model.Book</beans:value>
 				<beans:value>com.vermeg.polytech.model.User</beans:value>
 				<beans:value>com.vermeg.polytech.model.OrderLine</beans:value>
+				<beans:value>com.vermeg.polytech.model.Order</beans:value>
 			</beans:list> 
 		</beans:property>
 		<beans:property name="hibernateProperties">
